@@ -40,18 +40,7 @@ alfabe = {
     "9": "----."
 }
 
-def yazdir(*metin):
-    kelime = ""
-    for oku in metin:
-        if oku in alfabe:
-            kelime += alfabe[oku]
-        else:
-            return "Türkçe karakter veya olmayan bir işaret kullandınız."
-    return kelime
-        
-metin = input("Metin: ")
-print(yazdir(*metin))
 
-
-
-
+metin = input("Yazı: ")
+islem = list(map(lambda x: alfabe[x] if x in alfabe else "EROR({}) ".format(x), list(metin)))
+print(metin+ " => "+"".join(islem))
